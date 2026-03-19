@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { TripRequest, TripItinerary } from '../types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 const itinerarySchema: Schema = {
   type: Type.OBJECT,
@@ -42,7 +42,7 @@ const itinerarySchema: Schema = {
 };
 
 export const generateTripItinerary = async (request: TripRequest): Promise<TripItinerary> => {
-  const modelId = "gemini-2.5-flash"; // Using structured output capable model
+  const modelId = "gemini-3-flash-preview"; // Using structured output capable model
   
   const prompt = `
     Plan a detailed ${request.duration}-day trip to ${request.destination}, India.

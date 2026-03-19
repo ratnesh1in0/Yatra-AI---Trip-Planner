@@ -10,8 +10,8 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     define: {
-      // This enables the usage of process.env.API_KEY in the client-side code
-      'process.env.API_KEY': JSON.stringify(env.API_KEY || process.env.API_KEY)
+      // This enables the usage of process.env.GEMINI_API_KEY in the client-side code
+      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY || process.env.GEMINI_API_KEY)
     }
   }
 })
